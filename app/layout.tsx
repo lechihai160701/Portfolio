@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./globals.css";
+import SplashCursor from "@/components/SplashCursor";
+
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -28,19 +30,9 @@ export default function RootLayout({
         ></link>
       </head>
       <body className={poppins.className}>
+        <SplashCursor />
         {children}
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-        />
+        <ToastContainer />
       </body>
     </html>
   );
