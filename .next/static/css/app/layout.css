@@ -1004,6 +1004,10 @@ body{
   margin-top: 30px;
   margin-bottom: 30px;
 }
+.my-5{
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
 .\!mt-\[40px\]{
   margin-top: 40px !important;
 }
@@ -1128,6 +1132,9 @@ body{
 .scale-50{
   --tw-scale-x: .5;
   --tw-scale-y: .5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .cursor-pointer{
@@ -1333,6 +1340,9 @@ body{
 .text-\[30px\]{
   font-size: 30px;
 }
+.text-\[clamp\(1\.6rem\2c 4vw\2c 3rem\)\]{
+  font-size: clamp(1.6rem,4vw,3rem);
+}
 .font-\[600\]{
   font-weight: 600;
 }
@@ -1350,6 +1360,9 @@ body{
 }
 .uppercase{
   text-transform: uppercase;
+}
+.leading-\[1\.5\]{
+  line-height: 1.5;
 }
 .tracking-\[1px\]{
   letter-spacing: 1px;
@@ -1407,6 +1420,10 @@ body{
 }
 .blur-3xl{
   --tw-blur: blur(64px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.blur{
+  --tw-blur: blur(8px);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .filter{

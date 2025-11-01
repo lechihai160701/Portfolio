@@ -1,11 +1,11 @@
 import Orb from "@/components/Orb";
 import About from "@/components/ui/About";
+import BackgroundLayer from "@/components/ui/BackgroundLayer"; // hoặc đặt trong file
 import Contact from "@/components/ui/Contact";
 import Home from "@/components/ui/Home";
 import NoSSRHeader from "@/components/ui/NoSSRHeader";
 import Project from "@/components/ui/Project";
 import Skill from "@/components/ui/Skill";
-import BackgroundLayer from "@/components/ui/BackgroundLayer"; // hoặc đặt trong file
 const arrayItem = [
   {
     className: "home",
@@ -27,8 +27,8 @@ const arrayItem = [
     nameComponent: <Skill />,
   },
   {
-    className: "project",
-    id: "project",
+    className: "projects",
+    id: "projects",
     nameComponent: <Project />,
   },
   {
@@ -39,17 +39,19 @@ const arrayItem = [
 ];
 export default function HomePage() {
   return (
-    <div className="w-full h-full relative overflow-x-hidden">
+    <div
+      className="w-full  relative overflow-x-hidden"
+      // h-full
+    >
       <BackgroundLayer />
 
       <NoSSRHeader />
-      <main>
+      <main className="h-full">
         {arrayItem.map((item, i) => (
           <section
             key={i}
             className={`${item.className} relative`}
-            id={item.id}
-            style={{ minHeight: "100vh" }} // Đảm bảo full height
+            id={`${item.id}`}
           >
             {item.nameComponent}
           </section>

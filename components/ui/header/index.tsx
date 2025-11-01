@@ -59,9 +59,10 @@ const Header = () => {
     <header id="header" className="relative">
       {/* bg-[#333] h-[80px]  */}
       <div
-        className={`header-top ${
-          offsetScroll >= 40 ? "navigation-background bg-black" : ""
-        } w-full fixed left-0 top-0 z-50 transition-all duration-400 ease-out`}
+        // className={`header-top ${
+        //   offsetScroll >= 40 ? "navigation-background bg-black" : ""
+        // } w-full fixed left-0 top-0 z-50 transition-all duration-400 ease-out`}
+        className="header-top w-full fixed left-0 top-0 z-50 transition-all duration-400 ease-out"
       >
         <div className="container">
           <div className="flex flex-row justify-between">
