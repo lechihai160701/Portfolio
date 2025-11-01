@@ -6,13 +6,12 @@ const Skill = () => {
   const [selectedSkill, setSelectedSkill] = useState<number | null>(null);
 
   return (
-    <div className="min-h-[100vh] flex flex-col items-center justify-center py-10">
-      <div className="w-full max-w-7xl px-6 lg:px-12 text-center">
-        <h2 className="mb-16 text-4xl sm:text-5xl md:text-6xl font-bold text-white">
-          Skills <span className="text-cyan-400 animate-pulse">Me</span>
-        </h2>
-
+    <div className="min-h-[100vh] flex flex-col items-end justify-center py-10">
+      <div className="w-full max-w-7xl  text-center">
         <div className="relative w-full max-w-5xl mx-auto aspect-square">
+          <h2 className="mb-16 text-4xl px-6 lg:px-12 sm:text-5xl md:text-6xl font-bold text-white">
+            Skills <span className="text-cyan-400 animate-pulse">Me</span>
+          </h2>
           <div className="absolute inset-0 flex items-center justify-center">
             {/* Vòng tròn nền – nhỏ, mờ */}
             <div className="absolute w-72 h-72 rounded-full bg-gradient-to-br from-cyan-500/10 to-purple-600/10 backdrop-blur-xl border border-white/5 shadow-2xl"></div>
