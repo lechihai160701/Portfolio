@@ -56,7 +56,8 @@ const Header = () => {
     };
   }, []);
   return (
-    <header id="header" className="bg-[#333] h-[80px] relative">
+    <header id="header" className="relative">
+      {/* bg-[#333] h-[80px]  */}
       <div
         className={`header-top ${
           offsetScroll >= 40 ? "navigation-background bg-black" : ""

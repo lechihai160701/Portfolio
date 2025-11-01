@@ -1,9 +1,9 @@
+import SplashCursor from "@/components/SplashCursor";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
-import SplashCursor from "@/components/SplashCursor";
 
 const poppins = Poppins({
   subsets: ["latin"],

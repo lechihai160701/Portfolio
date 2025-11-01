@@ -29,62 +29,104 @@ const IconList = [
 const Home = () => {
   const headerRef = useRef<HTMLDivElement>(null);
 
+  // return (
+  //   <div
+  //     className={`min-h-[100vh] flex justify-center items-center after:absolute after:bg-[rgba(0,0,0,.7)] after:left-0 after:top-0 after:w-full after:h-full after:-z-10`}
+  //     data-stellar-background-ratio="0.6"
+  //     ref={headerRef}
+  //   >
+  //     <div className="display-table">
+  //       <div className="table-cell align-middle">
+  //         <div className="container">
+  //           <div className="text-center">
+  //             <div className="header-text">
+  //               <p className="text-[#f8f8f8] tracking-[4px] text-[15px] mt-[40px] mb-[20px]">
+  //                 Hi, This is Le Chi Hai
+  //               </p>
+  //               <h2 className="text-white text-[30px] md:text-[35px] lg:text-[50px] tracking-[5px]">
+  //                 <span className="typing">
+  //                   I&apos;m {` `}
+  //                   <span className="text-primary-color font-[700]">
+  //                     <ReactTyped
+  //                       strings={["Front end DEV"]}
+  //                       typeSpeed={100}
+  //                       loop
+  //                       backSpeed={20}
+  //                       showCursor={true}
+  //                     />
+  //                   </span>
+  //                 </span>
+  //               </h2>
+  //               <div className="flex flex-row gap-8 justify-center items-center !mt-[40px]">
+  //                 {IconList.map((i) => (
+  //                   <Link
+  //                     href={i.path}
+  //                     key={i.id}
+  //                     target="_blank"
+  //                     className="inline-flex justify-center items-center w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] bg-transparent rounded-full text-primary-color transition-all duration-500 ease-out hover:bg-primary-color hover:text-black hover:shadow-primary "
+  //                     style={{ border: "0.2rem solid #00fbff" }}
+  //                   >
+  //                     {i.icon}
+  //                   </Link>
+  //                 ))}
+  //               </div>
+  //               <div className="!mt-[60px]">
+  //                 <Link
+  //                   href="/CVFrontEnd_LeChiHai.pdf"
+  //                   target="blank"
+  //                   download="CV"
+  //                   className="mx-[30px] my-[15px] py-[14px] px-[45px] cursor-pointer inline-block tracking-[1px] relative transition-all duration-300 bg-primary-color text-black rounded-[50px] text-[14px] md:text-[18px] lg:text-[20px] font-[600] hover:shadow-none shadow-primary"
+  //                 >
+  //                   Download CV
+  //                 </Link>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>
+  // );
   return (
-    <div
-      className={`home-section-background min-h-[100vh] flex justify-center items-center after:absolute after:bg-[rgba(0,0,0,.7)] after:left-0 after:top-0 after:w-full after:h-full after:-z-10`}
-      data-stellar-background-ratio="0.6"
-      ref={headerRef}
-    >
-      <div className="display-table">
-        <div className="table-cell align-middle">
-          <div className="container">
-            <div className="text-center">
-              <div className="header-text">
-                <p className="text-[#f8f8f8] tracking-[4px] text-[15px] mt-[40px] mb-[20px]">
-                  Hi, This is Le Chi Hai
-                </p>
-                <h2 className="text-white text-[30px] md:text-[35px] lg:text-[50px] tracking-[5px]">
-                  <span className="typing">
-                    I&apos;m {` `}
-                    <span className="text-primary-color font-[700]">
-                      <ReactTyped
-                        strings={["Front end DEV"]}
-                        typeSpeed={100}
-                        loop
-                        backSpeed={20}
-                        showCursor={true}
-                      />
-                    </span>
-                  </span>
-                </h2>
-                <div className="flex flex-row gap-8 justify-center items-center !mt-[40px]">
-                  {IconList.map((i) => (
-                    <Link
-                      href={i.path}
-                      key={i.id}
-                      target="_blank"
-                      className="inline-flex justify-center items-center w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] bg-transparent rounded-full text-primary-color transition-all duration-500 ease-out hover:bg-primary-color hover:text-black hover:shadow-primary "
-                      style={{ border: "0.2rem solid #00fbff" }}
-                    >
-                      {i.icon}
-                    </Link>
-                  ))}
-                </div>
-                <div className="!mt-[60px]">
-                  <Link
-                    href="/CVFrontEnd_LeChiHai.pdf"
-                    target="blank"
-                    download="CV"
-                    className="mx-[30px] my-[15px] py-[14px] px-[45px] cursor-pointer inline-block tracking-[1px] relative transition-all duration-300 bg-primary-color text-black rounded-[50px] text-[14px] md:text-[18px] lg:text-[20px] font-[600] hover:shadow-none shadow-primary"
-                  >
-                    Download CV
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="flex flex-col items-center justify-center text-center space-y-6">
+      <p className="text-[#f8f8f8] tracking-[4px] text-[15px]">
+        Hi, This is Le Chi Hai
+      </p>
+      <h2 className="text-white text-[30px] md:text-[35px] lg:text-[50px] tracking-[5px] font-bold">
+        I&apos;m{" "}
+        <span className="text-primary-color">
+          <ReactTyped
+            strings={["Front end DEV"]}
+            typeSpeed={100}
+            loop
+            backSpeed={20}
+            showCursor={true}
+          />
+        </span>
+      </h2>
+
+      {/* Icon List */}
+      <div className="flex justify-center gap-6">
+        {IconList.map((i) => (
+          <Link
+            href={i.path}
+            key={i.id}
+            target="_blank"
+            className="w-12 h-12 rounded-full border-2 border-cyan-400 flex items-center justify-center text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all"
+          >
+            {i.icon}
+          </Link>
+        ))}
       </div>
+
+      {/* Download CV */}
+      <Link
+        href="/CVFrontEnd_LeChiHai.pdf"
+        download
+        className="mt-10 inline-block px-10 py-3 bg-cyan-400 text-black rounded-full font-semibold hover:shadow-lg hover:shadow-cyan-400/50 transition"
+      >
+        Download CV
+      </Link>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="bg-second-color min-h-[100vh] flex items-center justify-center h-full">
+    <div className="min-h-[100vh] flex items-center justify-center h-full">
       <div className="pt-[108px] lg:px-[113px] pb-[31px]">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 -mx-[15px] gap-10 lg:gap-0">

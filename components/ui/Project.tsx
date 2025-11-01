@@ -29,7 +29,7 @@ const Project = () => {
     setChecked(false);
   };
   return (
-    <div className="bg-second-color min-h-[100vh] flex items-center justify-center h-full">
+    <div className="min-h-[100vh] flex items-center justify-center h-full">
       <div className="pt-[108px] lg:px-[113px] pb-[31px]">
         <div className="container">
           <h2 className="mb-[50px] lg:mb-[78px] text-center text-[22px] sm:text-[25px] md:text-[30px] lg:text-[38px] font-bold text-white">
