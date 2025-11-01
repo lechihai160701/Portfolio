@@ -30,7 +30,7 @@ export default function RootLayout({
         ></link>
       </head>
       <body className={poppins.className}>
-        <SplashCursor />
+        {/* <SplashCursor /> */}
         {children}
         <ToastContainer />
       </body>

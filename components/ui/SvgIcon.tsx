@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const svgICon = [
+export const svgICon = [
   {
     html: (
       <svg
@@ -24,6 +24,7 @@ const svgICon = [
         ></path>
       </svg>
     ),
+    name: "HTML",
   },
   {
     html: (
@@ -73,6 +74,7 @@ const svgICon = [
         ></path>
       </svg>
     ),
+    name: "CSS",
   },
   {
     html: (
@@ -90,6 +92,7 @@ const svgICon = [
         ></path>
       </svg>
     ),
+    name: "SASS",
   },
   {
     html: (
@@ -108,6 +111,7 @@ const svgICon = [
         ></path>
       </svg>
     ),
+    name: "Javascript",
   },
   {
     html: (
@@ -130,6 +134,7 @@ const svgICon = [
         ></path>
       </svg>
     ),
+    name: "Typescript",
   },
   {
     html: (
@@ -161,6 +166,7 @@ const svgICon = [
         </g>
       </svg>
     ),
+    name: "ReactJS",
   },
   {
     html: (
@@ -234,6 +240,7 @@ const svgICon = [
         ></polygon>
       </svg>
     ),
+    name: "NextJS",
   },
   {
     html: (
@@ -497,20 +504,90 @@ const svgICon = [
     ),
   },
 ];
-const SvgIcon = () => {
+
+interface SvgIconProps {
+  selected: number | null;
+  onSelect: (index: number | null) => void;
+}
+
+const SvgIcon = ({ selected, onSelect }: SvgIconProps) => {
+  const radius = 200; // bán kính
+  const total = svgICon.length;
+  const angleStep = 360 / total;
+
   return (
-    <React.Fragment>
-      {svgICon.map((icon, i) => (
-        <div
-          className="group relative transition-all duration-200 ease-in rounded-full border p-[3px] sm:p-2 md:p-3 lg:p-5 hover:animate-waving-hand"
-          key={i}
-        >
-          <div className="scale-50 sm:scale-75 md:scale-90 lg:scale-100">
-            {icon.html}
-          </div>
-        </div>
-      ))}
-    </React.Fragment>
+    <div className="relative w-full h-full">
+      {/* Container trung tâm – chính là tâm vòng tròn */}
+      <div className="absolute top-1/2 left-1/2 w-0 h-0 -translate-x-1/2 -translate-y-1/2">
+        {svgICon.map((icon, i) => {
+          const angle = angleStep * i - 90;
+          const x = radius * Math.cos((angle * Math.PI) / 180);
+          const y = radius * Math.sin((angle * Math.PI) / 180);
+          const isSelected = selected === i;
+          const isDimmed = selected !== null && !isSelected;
+
+          return (
+            <div
+              key={i}
+              className={`absolute transition-all duration-500 ease-out cursor-pointer
+                ${isDimmed ? "opacity-30 scale-75" : "opacity-100"}
+                ${isSelected ? "z-30" : "z-10"}
+              `}
+              style={{
+                // Tâm là (0,0), dịch chuyển theo x, y
+                transform: `translate(${x}px, ${y}px) scale(${
+                  isSelected ? 1.7 : 1
+                })`,
+                // Căn giữa icon tại điểm (x,y)
+                transformOrigin: "center",
+                top: 0,
+                left: 0,
+                marginLeft: "-40px", // w-20 = 80px → -40px
+                marginTop: "-40px", // h-20 = 80px → -40px
+              }}
+              onClick={(e) => {
+                e.stopPropagation();
+                onSelect(isSelected ? null : i);
+              }}
+            >
+              {/* Icon Container */}
+              <div
+                className={`relative w-20 h-20 p-4 rounded-2xl bg-white/10 backdrop-blur-md border-2 transition-all duration-500
+                  ${
+                    isSelected
+                      ? "border-cyan-400 shadow-2xl shadow-cyan-400/70"
+                      : "border-white/20 hover:border-cyan-300/70"
+                  }
+                  hover:scale-110 hover:shadow-2xl hover:bg-white/20
+                `}
+              >
+                {isSelected && (
+                  <>
+                    <div className="absolute inset-0 -z-10 rounded-2xl animate-ping-slow bg-cyan-400/50"></div>
+                    <div className="absolute -inset-3 rounded-2xl bg-cyan-400/30 blur-2xl animate-pulse"></div>
+                  </>
+                )}
+
+                <div className="w-full h-full flex items-center justify-center">
+                  <div
+                    className={`transition-transform duration-300 ${
+                      isSelected ? "scale-125" : "scale-90"
+                    }`}
+                  >
+                    {icon.html}
+                  </div>
+                </div>
+              </div>
+
+              {/* Tooltip */}
+              <span className="absolute -top-14 left-1/2 -translate-x-1/2 scale-0 transform rounded bg-gray-800/90 px-3 py-1.5 text-xs font-medium text-white shadow-lg transition-all duration-300 group-hover:scale-100 whitespace-nowrap z-40 backdrop-blur-sm">
+                {icon.name}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 };
 
