@@ -1220,20 +1220,11 @@ body{
 .flex-col{
   flex-direction: column;
 }
-.items-start{
-  align-items: flex-start;
-}
 .items-end{
   align-items: flex-end;
 }
 .items-center{
   align-items: center;
-}
-.justify-start{
-  justify-content: flex-start;
-}
-.justify-end{
-  justify-content: flex-end;
 }
 .justify-center{
   justify-content: center;
@@ -1448,9 +1439,6 @@ body{
 }
 .text-center{
   text-align: center;
-}
-.text-right{
-  text-align: right;
 }
 .align-middle{
   vertical-align: middle;
@@ -1707,7 +1695,7 @@ body {
 
 /* Đảm bảo section full height */
 section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   position: relative;
   z-index: 1;
 }

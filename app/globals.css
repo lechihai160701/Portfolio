@@ -28,7 +28,7 @@ body {
 
 /* Đảm bảo section full height */
 section {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   position: relative;
   z-index: 1;
 }

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <div className="min-h-[100vh] flex flex-col items-end justify-center py-10">
+    <div className="flex flex-col items-end justify-center py-10">
       {/* <div className="pt-[108px] lg:px-[113px] pb-[31px]"> */}
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 -mx-[15px] gap-10 lg:gap-0">

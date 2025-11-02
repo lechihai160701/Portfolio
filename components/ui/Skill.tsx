@@ -6,7 +6,7 @@ const Skill = () => {
   const [selectedSkill, setSelectedSkill] = useState<number | null>(null);
 
   return (
-    <div className="min-h-[100vh] flex flex-col items-end justify-center py-10">
+    <div className="flex flex-col items-end justify-center py-10">
       <div className="w-full max-w-7xl  text-center">
         <h2 className="mb-16 text-4xl px-6 lg:px-12 sm:text-5xl md:text-6xl font-bold text-white">
           Skills <span className="text-cyan-400 animate-pulse">Me</span>
